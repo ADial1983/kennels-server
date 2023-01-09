@@ -1,27 +1,33 @@
 CUSTOMERS = [
     {
         "id": 1,
-        "name": "Flynn Fairwind"
+        "name": "Flynn Fairwind",
+        "email": "boldarva@admiralty.org"
     },
     {
         "id": 2,
-        "name": "Sylvanas Windrunner"
+        "name": "Sylvanas Windrunner",
+        "email": "BansheeQueen@forsaken.gov"
     },
     {
         "id": 3,
-        "name": "Mathias Shaw"
+        "name": "Mathias Shaw",
+        "email": "spymaster@si7.stormwind.gov"
     },
     {
         "id": 4,
-        "name": "Anduin Wrynn"
+        "name": "Anduin Wrynn",
+        "email": "highking@stormwind.gov"
     },
     {
         "id": 5,
-        "name": "Magni Bronzebeard"
+        "name": "Magni Bronzebeard",
+        "email": "speaker@azeroth.org"
     },
     {
         "id": 6,
-        "name": "Illidan Stormrage"
+        "name": "Illidan Stormrage",
+        "email": "LrdIlldn@illidari.com"
     }
 ]
 
@@ -71,3 +77,13 @@ def delete_customer(id):
     # If the animal was found, use pop(int) to remove it from list
     if customer_index >= 0:
         CUSTOMERS.pop(customer_index)
+
+
+def update_customer(id, new_customer):
+    # Iterate the ANIMALS list, but use enumerate() so that
+    # you can access the index value of each item.
+    for index, customer in enumerate(CUSTOMERS):
+        if customer["id"] == id:
+            # Found the animal. Update the value.
+            CUSTOMERS[index] = new_customer
+            break
